@@ -11,8 +11,8 @@ import axios from 'axios';
     const bankDataFromStore = useSelector((state) => state.bank.bankState);
     const [newBankObj, setNewBankObj] = useState('');
     const [displayPensionerObj, setDisplayPensionerObj] = useState('');
-    const [updateBank, setUpdateBank] = useState('');
-    const [displyUpdateBank, setDisplayUpdateBank] = useState('');
+    //const [updateBank, setUpdateBank] = useState('');
+  //  const [displyUpdateBank, setDisplayUpdateBank] = useState('');
 
 
     const handleBank = (e) => {
