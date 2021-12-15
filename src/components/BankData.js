@@ -72,18 +72,18 @@ import axios from 'axios';
             });
     }
 
-    const updatebankdetails = (evt) => {
-        evt.preventDefault();
-        axios.post(`updatebankdetails`, updateBank)
-            .then((response) => {
-                setDisplayUpdateBank(response.data);
-                alert('Bank Details update successfully.');
-                setDisplayUpdateBank({ accno: '', bankName: "", branch: "", ifscCode: "", accHolderName: "" })
-            })
-            .catch(() => {
-                alert("Bank could not be updated.");
-            });
-    }
+    // const updatebankdetails = (evt) => {
+    //     evt.preventDefault();
+    //     axios.post(`updatebankdetails`, updateBank)
+    //         .then((response) => {
+    //             setDisplayUpdateBank(response.data);
+    //             alert('Bank Details update successfully.');
+    //             setDisplayUpdateBank({ accno: '', bankName: "", branch: "", ifscCode: "", accHolderName: "" })
+    //         })
+    //         .catch(() => {
+    //             alert("Bank could not be updated.");
+    //         });
+    // }
 
   return (
         <div className="container">
@@ -176,7 +176,7 @@ import axios from 'axios';
                 </div>
 
 <p>-------------------------------------------------</p>
-                <div className="container">
+                {/* <div className="container">
                     <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
                         <p>update Bank Account</p>
 
@@ -212,7 +212,7 @@ import axios from 'axios';
                         </table>
                     </div>
 
-                </div>
+                </div> */}
             </div>
 
         </div>
