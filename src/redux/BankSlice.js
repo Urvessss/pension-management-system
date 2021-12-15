@@ -30,6 +30,9 @@ const BankSlice = createSlice({
         deletebankbyaccno:(state,action)=>{
             console.log('delete bank');
             state.bankState=action.payload;
+        },
+        updatebankdetails:(state,action)=>{
+            state.bankState=action.payload;
         }
 
 

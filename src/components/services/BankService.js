@@ -16,6 +16,6 @@ const deleteBankService=(accno)=>{
     return axios.delete(`http://localhost:8082/deletebankbyaccno/${accno}`)
 }
 const updateBankService =(bank)=>{
-    return axios.put(`http://localhost:8082/updatebank`,bank);
+    return axios.put(`http://localhost:8082/updatebankdetails`,bank);
 }
 export{getBankByIdService,addBankService,deleteBankService,updateBankService};
