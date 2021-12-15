@@ -1,5 +1,5 @@
 import React from 'react'
-import { getBankByIdService, addBankService, deleteBankService } from './services/BankService';
+import { getBankByIdService, addBankService, deleteBankService ,updateBankService} from './services/BankService';
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { getBankById, addbankdetails, deletebankbyaccno,updatebankdetails } from '../redux/BankSlice';
@@ -11,8 +11,8 @@ import axios from 'axios';
     const bankDataFromStore = useSelector((state) => state.bank.bankState);
     const [newBankObj, setNewBankObj] = useState('');
     const [displayPensionerObj, setDisplayPensionerObj] = useState('');
-    //const [updateBank, setUpdateBank] = useState('');
-  //  const [displyUpdateBank, setDisplayUpdateBank] = useState('');
+    const [updateBank, setUpdateBank] = useState('');
+   const [displyUpdateBank, setDisplayUpdateBank] = useState('');
 
 
     const handleBank = (e) => {
@@ -72,18 +72,18 @@ import axios from 'axios';
             });
     }
 
-    // const updatebankdetails = (evt) => {
-    //     evt.preventDefault();
-    //     axios.post(`updatebankdetails`, updateBank)
-    //         .then((response) => {
-    //             setDisplayUpdateBank(response.data);
-    //             alert('Bank Details update successfully.');
-    //             setDisplayUpdateBank({ accno: '', bankName: "", branch: "", ifscCode: "", accHolderName: "" })
-    //         })
-    //         .catch(() => {
-    //             alert("Bank could not be updated.");
-    //         });
-    // }
+    const updatebankdetails = (evt) => {
+        evt.preventDefault();
+        axios.post(`updatebankdetails`, updateBank)
+            .then((response) => {
+                setDisplayUpdateBank(response.data);
+                alert('Bank Details update successfully.');
+                setDisplayUpdateBank({ accno: '', bankName: "", branch: "", ifscCode: "", accHolderName: "" })
+            })
+            .catch(() => {
+                alert("Bank could not be updated.");
+            });
+    }
 
   return (
         <div className="container">
@@ -140,6 +140,7 @@ import axios from 'axios';
                 <div className="container">
                     <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
                         <p>Add Bank Account</p>
+                        
 
                         <input className="form-control mt-3" type="text" id="accno" name="accno" value={newBankObj.accno} onChange={handleAddbank} placeholder="Enter accno to" />
                         <input className="form-control mt-3" type="text" id="bankName" name="bankName" value={newBankObj.bankName} onChange={handleAddbank} placeholder="Enter bankName to " />
